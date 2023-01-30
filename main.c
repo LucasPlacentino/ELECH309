@@ -103,7 +103,7 @@
 
 #include <xc.h>
 
-#define FCY 3685000     // �C cycle freq
+#define FCY 3685000     // microC cycle freq
 #include "libpic30.h"   // __delay_ms
 
 #include "test.h"
@@ -117,7 +117,7 @@ int main(void) {
     // Main loop
     while(1) {
         //do stuff
-        if (led < 10) {
+        if (test < 10) {
             test += 1;
         } else {
             test = 1;
