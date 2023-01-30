@@ -1,8 +1,9 @@
 /*
  * File:   main.c
- * Author: lucasp
+ * Author: - Lucas Placentino
+ *         - .
  *
- * Created on 30 janvier 2023, 18:16
+ * Created on 30 jan 2023, 18:16
  */
 
 // DSPIC33FJ128MC802 Configuration Bit Settings
@@ -52,10 +53,10 @@
 // Use project enums instead of #define for ON and OFF.
 
 // ------------------------
-/**
+/*
  * main file
  * 
- * Directions command data for the robot is sent with frames via FM sound.
+ * Directions commands data for the robot is sent with frames via FM sound.
  * 
  * Command frame format:
  * [preamble]
@@ -70,7 +71,7 @@
  *    | |     |     | |
  *    | |   params  | |
  *    | |           | |
- *    | order       | |
+ *    | command     | |
  *    |             | |
  *    |        parity |
  *    |               |
@@ -80,25 +81,22 @@
  * 
  * data in frame:
  * forward:
- *  order: 0b00
- *  param: non signed distance in cm
+ *  command: 0b00
+ *  param: unsigned distance in cm
  * 
  * backward:
- *  order: 0b01
- *  param: non signed distance in cm
+ *  command: 0b01
+ *  param: unsigned distance in cm
  * 
  * turn right:
- *  order: 0b10
- *  param: non signed angle in degrees
+ *  command: 0b10
+ *  param: unsigned angle in degrees
  * 
  * turn left:
- *  order: 0b11
- *  param: non signed angle in degrees
+ *  command: 0b11
+ *  param: unsigned angle in degrees
  * 
  */
-
-
-
 // ------------------------
 
 #include <xc.h>
