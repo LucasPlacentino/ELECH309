@@ -5,8 +5,6 @@
  * Created on 30 janvier 2023, 18:16
  */
 
-#include "xc.h" //included below?
-
 // DSPIC33FJ128MC802 Configuration Bit Settings
 // 'C' source line config statements
 // FBS
@@ -53,9 +51,59 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
+// ------------------------
+/**
+ * main file
+ * 
+ * Directions command data for the robot is sent with frames via FM sound.
+ * 
+ * Command frame format:
+ * [preamble]
+ *    |
+ *    | [data]
+ *    |   |
+ *    |   |     [postamble]
+ *    |   |          |
+ *    | __+________ _+_
+ * => 0 bb bbbbbbbb b 1
+ *    ^ ^     ^     ^ ^
+ *    | |     |     | |
+ *    | |   params  | |
+ *    | |           | |
+ *    | order       | |
+ *    |             | |
+ *    |        parity |
+ *    |               |
+ * start bit (0)      |
+ *                    |
+ *               stop bit (1)
+ * 
+ * data in frame:
+ * forward:
+ *  order: 0b00
+ *  param: non signed distance in cm
+ * 
+ * backward:
+ *  order: 0b01
+ *  param: non signed distance in cm
+ * 
+ * turn right:
+ *  order: 0b10
+ *  param: non signed angle in degrees
+ * 
+ * turn left:
+ *  order: 0b11
+ *  param: non signed angle in degrees
+ * 
+ */
+
+
+
+// ------------------------
+
 #include <xc.h>
 
-#define FCY 3685000     // µC cycle freq
+#define FCY 3685000     // ï¿½C cycle freq
 #include "libpic30.h"   // __delay_ms
 
 #include "test.h"
