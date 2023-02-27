@@ -46,6 +46,7 @@ int main(void) {
     // starts timer1
     T1CONbits.TON = 1;
     // Enable timer1 interrupt, so that its ISR will be called on overflow
+    //set Interrupt Enable to 1 (for Timer1) :
     _T1IE = 1;  // _T>1IE is a shortcut for IEC0bits.T1IE
 
     // Main (infinite) loop
