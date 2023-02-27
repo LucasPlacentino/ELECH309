@@ -3,9 +3,17 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>ELECH309</name>
-            <creation-uuid>a043992a-ef7d-49af-ad8a-f1f26febf527</creation-uuid>
+            <name>timer1</name>
+            <name>gpio3</name>
+            <name>gpio2</name>
+            <name>gpio1</name>
+            <creation-uuid>10412276-13d9-4aad-acda-496d07c61429</creation-uuid>
             <make-project-type>0</make-project-type>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
+            <header-extensions/>
+            <asminc-extensions/>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList/>
             <confList>
@@ -14,7 +22,6 @@
                     <type>2</type>
                 </confElem>
             </confList>
-            <sourceEncoding>ISO-8859-1</sourceEncoding>
             <formatting>
                 <project-formatting-style>false</project-formatting-style>
             </formatting>
