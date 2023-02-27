@@ -1,7 +1,7 @@
 # .gitignore file
 
 # MPLAB X IDE (Netbeans) specific
-**/~*.*
+#**/~*.*
 **/build/
 **/debug/
 **/dist/
